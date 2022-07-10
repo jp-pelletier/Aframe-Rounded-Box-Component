@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang = "fr">
+<head>
+<meta name = "author" content = "Jean-Pierre PELLETIER">
+<title>THREE.JS ROUNDED ANGLES BOX COMPONENT FOR AFRAME</title>
+
+<script src = "https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script type = "text/javascript" src = "./js/roundedanglesbox.js"></script>
+
+
+</head>
+<body>
+
+<a-scene fog = "type: exponential; color: #bfcfd6; near: 4; density: 0.09;">
+
+<a-asset>
+    <img id = "Floor" src = "img/Floor.png">
+</a-asset>
+
+<a-sky color = "#222"></a-sky>
+
+<!--THE FLOOR-->
+
+<a-plane
+    width = "100"
+    height = "100"
+    position = "0 0 0"
+    rotation = "-90 0 0"
+    material = "src: #Floor;"
+    repeat = "100 100;">
+</a-plane>
+
+<!--THE BOUNCING CUBE-->
+
+<a-entity position = "0 0 -4" rotation = "0 20 0">
+
+    <!--The Metal Base-->
+    <a-entity
+        roundedanglesbox = "
+        width: 1.6;
+        height: 0.09;
+        depth: 1.6;
+        radius: 0.04;
+        roughness: 0.2;
+        metalness: 0.2;
+        src: img/Metal.jpg;
+        repeat: 16 16;"
+        position = "0 0.06 0"
+        rotation = "0 45 0">
+    </a-entity>
+
+    <!--The Red Base-->
+    <a-entity
+        roundedanglesbox = "
+        width: 1.2;
+        height: 0.1;
+        depth: 1.2;
+        radius: 0.15;
+        color: #d20404;
+        roughness: 0;
+        metalness: 0.4;"
+        position = "0 0.1 0">
+    </a-entity>
+
+    <!--The Glass Box-->
+    <a-entity
+        roundedanglesbox = "
+        width: 1;
+        height: 0.6;
+        depth: 1;
+        radius: 0.15;
+        color: #ff5813;
+        roughness: 0;
+        metalness: 0.3;
+        transparent: true;
+        opacity: 0.6;"
+        position = "0 0.4 0">
+    </a-entity>
+
+    <!--The Orange Turning Box-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.7;
+        height: 0.3;
+        depth: 0.7;
+        radius: 0.15;
+        color: #ff5813;
+        roughness: 0;
+        metalness: 0.3;"
+        position = "0 0.45 0"
+        animation = "
+        property: rotation;
+        dir: reverse;
+        from: 0 0 0;
+        to: 0 360 0;
+        dur: 8000;
+        loop: true;
+        easing: linear;">
+    </a-entity>
+
+    <!--The Red Table-->
+    <a-entity
+        roundedanglesbox = "
+        width: 1.2;
+        height: 0.06;
+        depth: 1.2;
+        radius: 0.06;
+        color: #ac0000;
+        roughness: 0;
+        metalness: 0.4;"
+        position = "0 0.74 0">
+    </a-entity>
+
+    <!--The Glass Tube-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.45;
+        height: 2.5;
+        depth: 0.45;
+        radius: 0.45;
+        color: #eee;
+        roughness: 0;
+        metalness: 0.6;
+        transparent: true;
+        opacity: 0.2;"
+        position = "0 1.7 0">
+    </a-entity>
+
+    <!--The Yellow Bouncing Cube-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.4;
+        height: 0.4;
+        depth: 0.4;
+        radius: 0.1;
+        color: #ffbc13;
+        roughness: 0;
+        metalness: 0.2;"
+        animation__1 = "
+        property: rotation;
+        dir: normal;
+        from: 0 0 0;
+        to: 360 1080 0;
+        dur: 8000;
+        loop: true;
+        easing: easeInOutElastic;"
+        animation__2 = "
+        property: position;
+        dir: alternate;
+        from: 0 2.6 0;
+        to: 0 1 0;
+        dur: 2000;
+        loop: true;">
+    </a-entity>
+
+</a-entity>
+
+<!--THE OLD FRIGDGE-->
+
+<a-entity position = "-2.5 0 -2.9" rotation = "0 55 0">
+    <a-entity
+        roundedanglesbox = "
+        width: 1.6;
+        height: 3;
+        depth: 0.9;
+        radius: 0.03;
+        color: #fff;"
+        position = "0 1.5 0">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 1.4;
+        height: 2.8;
+        depth: 0.2;
+        radius: 0.1;
+        segments: 3 9 9;
+        color: #ffb;"
+        position = "0 1.5 0.36">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 0.2;
+        height: 0.01;
+        depth: 0.02;
+        radius: 0.05;
+        color: #eee;"
+        position = "-0.5 1.5 0.5">
+    </a-entity>
+</a-entity>
+
+<!--THE METAL CUBE-->
+
+<a-entity
+    roundedanglesbox = "
+    width: 1.1;
+    height: 1.1;
+    depth: 1.1;
+    radius: 0.1;
+    color: #fff;
+    roughness: 0.4;
+    metalness: 0.2;
+    src: img/Metal.jpg;
+    repeat: 16 16;"
+    position = "-4 0.6 1"
+    rotation = "0 20 0">
+</a-entity>
+
+<!--THE WOODEN CUBE-->
+
+<a-entity
+    roundedanglesbox = "
+    width: 1;
+    height: 1;
+    depth: 1;
+    radius: 0.2;
+    roughness: 0;
+    metalness: 0;
+    src: img/Wood.jpg;
+    repeat: 4 4;"
+    position = "-4 0.6 -0.5"
+    rotation = "0 40 0">
+</a-entity>
+
+<!--THE TRANPARENT CUBE-->
+
+<a-entity
+    roundedanglesbox = "
+    width: 1;
+    height: 0.6;
+    depth: 1.4;
+    radius: 0.1;
+    color: #d6c;
+    roughness: 0;
+    metalness: 0.4;
+    transparent: true;
+    opacity: 0.9;"
+    position = "-3.9 1.55 0.2"
+    rotation = "0 -10 0">
+</a-entity>
+
+<!--THE FIR TREE-->
+
+<a-entity position = "3 0 -3" rotation = "0 -60 0">
+    <a-entity
+        roundedanglesbox = "
+        width: 0.45;
+        height: 0.8;
+        depth: 0.6;
+        radius: 0.1;
+        color: #644;
+        roughness: 0.4;
+        metalness: 0.2;"
+        position = "0 0.5 0">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 1.2;
+        height: 1.2;
+        depth: 0.4;
+        radius: 0.1;
+        color: #3a8;
+        roughness: 0;
+        metalness: 0.6;"
+        position = "0 0.9 0"
+        rotation = "0 0 45">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 1.2;
+        height: 1.2;
+        depth: 0.3;
+        radius: 0.1;
+        color: #fff;
+        roughness: 1;
+        metalness: 0;"
+        position = "0 0.95 0"
+        rotation = "0 0 45">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 1;
+        height: 1;
+        depth: 0.3;
+        radius: 0.1;
+        color: #3a8;
+        roughness: 0;
+        metalness: 0.5;"
+        position = "0 1.4 0"
+        rotation = "0 0 45">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 1;
+        height: 1;
+        depth: 0.2;
+        radius: 0.1;
+        color: #fff;
+        roughness: 1;
+        metalness: 0;"
+        position = "0 1.45 0"
+        rotation = "0 0 45">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 0.8;
+        height: 0.8;
+        depth: 0.2;
+        radius: 0.1;
+        color: #3a8;
+        roughness: 0;
+        metalness: 0.4;"
+        position = "0 1.9 0"
+        rotation = "0 0 45">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 0.8;
+        height: 0.8;
+        depth: 0.1;
+        radius: 0.1;
+        color: #fff;
+        roughness: 1;
+        metalness: 0;"
+        position = "0 1.95 0"
+        rotation = "0 0 45">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 0.6;
+        height: 0.6;
+        depth: 0.1;
+        radius: 0.1;
+        color: #3a8;
+        roughness: 0;
+        metalness: 0.3;"
+        position = "0 2.3 0"
+        rotation = "0 0 45">
+    </a-entity>
+    <a-entity
+        roundedanglesbox = "
+        width: 0.59;
+        height: 0.59;
+        depth: 0.1;
+        radius: 0.05;
+        color: #fff;
+        roughness: 1;
+        metalness: 0;"
+        position = "0 2.36 0.005"
+        rotation = "0 0 45">
+    </a-entity>
+</a-entity>
+
+<!--THE DESK-->
+
+<a-entity position = "3.5 0 -1" rotation = "0 -90 0">
+
+    <!--Support 1-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.06;
+        height: 0.8;
+        depth: 0.9;
+        radius: 0.03;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0;"
+        position = "0 0.4 0">
+    </a-entity>
+
+    <!--BackPannel 1-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.6;
+        height: 0.8;
+        depth: 0.08;
+        radius: 0.03;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0;"
+        position = "0.3 0.4 -0.4">
+    </a-entity>
+
+    <!--Drawer 1-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.5;
+        height: 0.24;
+        depth: 0.8;
+        radius: 0.02;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0.2;"
+        position = "0.3 0.66 0.03">
+    </a-entity>
+
+    <!--Handle 1-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.2;
+        height: 0.006;
+        depth: 0.01;
+        radius: 0.03;
+        color: #eee;"
+        position = "0.3 0.66 0.44">
+    </a-entity>
+
+    <!--Drawer 2-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.5;
+        height: 0.24;
+        depth: 0.8;
+        radius: 0.02;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0.2;"
+        position = "0.3 0.4 0.03">
+    </a-entity>
+
+    <!--Handle 2-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.2;
+        height: 0.006;
+        depth: 0.01;
+        radius: 0.03;
+        color: #eee;"
+        position = "0.3 0.4 0.44">
+    </a-entity>
+
+    <!--Drawer 3-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.5;
+        height: 0.24;
+        depth: 0.8;
+        radius: 0.02;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0.2;"
+        position = "0.3 0.14 0.03">
+    </a-entity>
+
+    <!--Handle 3-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.2;
+        height: 0.006;
+        depth: 0.01;
+        radius: 0.03;
+        color: #eee;"
+        position = "0.3 0.14 0.44">
+    </a-entity>
+
+    <!--Support 2-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.06;
+        height: 0.8;
+        depth: 0.9;
+        radius: 0.03;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0;"
+        position = "0.6 0.4 0">
+    </a-entity>
+
+    <!--BackPannel 2-->
+    <a-entity
+        roundedanglesbox = "
+        width: 2;
+        height: 0.5;
+        depth: 0.06;
+        radius: 0.03;
+        segments: 6 6 6;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0;"
+        position = "1.6 0.55 -0.4">
+    </a-entity>
+
+    <!--Support 3-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.06;
+        height: 0.8;
+        depth: 0.9;
+        radius: 0.03;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0;"
+        position = "2.6 0.4 0">
+    </a-entity>
+
+    <!--Drawer 4-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.8;
+        height: 0.18;
+        depth: 0.8;
+        radius: 0.02;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0.2;"
+        position = "3.05 0.48 0.06">
+    </a-entity>
+
+    <!--Handle 4-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.2;
+        height: 0.006;
+        depth: 0.01;
+        radius: 0.03;
+        color: #eee;"
+        position = "3.05 0.48 0.47">
+    </a-entity>
+
+    <!--Support 4-->
+    <a-entity
+        roundedanglesbox = "
+        width: 0.06;
+        height: 0.6;
+        depth: 0.9;
+        radius: 0.03;
+        color: #f4c76e;
+        roughness: 0.8;
+        metalness: 0;"
+        position = "3.5 0.3 0">
+    </a-entity>
+
+    <!--Table 1-->
+    <a-entity
+        roundedanglesbox = "
+        width: 2.8;
+        height: 0.05;
+        depth: 1;
+        radius: 0.04;
+        segments: 6 6 6;
+        color: #09f;
+        src: img/Wood.jpg;
+        repeat: 12 12;
+        roughness: 0;
+        metalness: 0;"
+        position = "1.3 0.8 0">
+    </a-entity>
+
+    <!--Table 2-->
+    <a-entity
+        roundedanglesbox = "
+        width: 1.1;
+        height: 0.04;
+        depth: 1;
+        radius: 0.02;
+        segments: 6 6 6;
+        color: #09f;
+        src: img/Wood.jpg;
+        repeat: 6 6;
+        roughness: 0;
+        metalness: 0;"
+        position = "3.05 0.6 0">
+    </a-entity>
+
+</a-entity>
+
+<!--THE COLORED TURNING CUBE-->
+
+    <a-entity
+        roundedanglesbox = "
+        radius: 0.2;
+        cubeMap_negx: red_face.png;
+        cubeMap_posz: blue_face.png;
+        cubeMap_posx: pink_face.png;
+        cubeMap_negz: green_face.png;
+        cubeMap_posy: orange_face.png;
+        cubeMap_negy: yellow_face.png;"
+        position = "-2 1 3"
+        rotation = "0 30 0"
+        animation = "
+        property: rotation;
+        dir: reverse;
+        from: 0 0 0;
+        to: 0 360 180;
+        dur: 12000;
+        loop: true;
+        easing: linear;">
+    </a-entity>
+
+<!--THE VENETIAN TURNING CUBE-->
+
+    <a-entity
+        roundedanglesbox = "
+        radius: 0.2;
+        cubeMap_negx: venice_negx.png;
+        cubeMap_posz: venice_posz.png;
+        cubeMap_posx: venice_posx.png;
+        cubeMap_negz: venice_negz.png;
+        cubeMap_posy: venice_posy.png;
+        cubeMap_negy: venice_negy.png;"
+        position = "0 1 3"
+        rotation = "0 30 0"
+        animation = "
+        property: rotation;
+        dir: reverse;
+        from: 0 0 0;
+        to: 0 360 180;
+        dur: 12000;
+        loop: true;
+        easing: linear;">
+    </a-entity>
+
+<!--THE BRUSHED ALUMINIUM TURNING CUBE-->
+
+    <a-entity
+        roundedanglesbox = "
+        radius: 0.2;
+        cubeMap_negx: grey_face.png;
+        cubeMap_posz: grey_face.png;
+        cubeMap_posx: grey_face.png;
+        cubeMap_negz: grey_face.png;
+        cubeMap_posy: grey_face.png;
+        cubeMap_negy: grey_face.png;"
+        position = "2 1 3"
+        rotation = "0 30 0"
+        animation = "
+        property: rotation;
+        dir: reverse;
+        from: 0 0 0;
+        to: 0 360 180;
+        dur: 12000;
+        loop: true;
+        easing: linear;">
+    </a-entity>
+
+</a-scene>
+
+</body>
+</html>
