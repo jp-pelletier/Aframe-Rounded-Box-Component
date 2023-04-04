@@ -102,5 +102,6 @@ AFRAME.registerComponent('roundedanglesbox', {
         };
         this.mesh = new THREE.Mesh(this.geometry, boxMat);
         el.setObject3D('mesh', this.mesh);
+        this.mesh.frustumCulled = false;
     }
 });
