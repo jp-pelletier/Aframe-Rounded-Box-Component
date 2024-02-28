@@ -29,7 +29,7 @@ AFRAME.registerComponent('roundedanglesbox', {
         var data = this.data;
         var el = this.el;
 
-        this.geometry = new THREE.BoxBufferGeometry(1, 1, 1, data.segments.x, data.segments.y, data.segments.z);
+        this.geometry = new THREE.BoxGeometry(1, 1, 1, data.segments.x, data.segments.y, data.segments.z);
 
         this.material = new THREE.MeshStandardMaterial({
             color: data.color,
