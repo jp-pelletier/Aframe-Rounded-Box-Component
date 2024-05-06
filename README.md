@@ -4,7 +4,7 @@ Light component for some rounded effects on A-FRAME boxes.
 
 Click the cover below for a live demo... and look behind !
 
-<a href="https://jp-pelletier.github.io/" target="_blank"><img src="https://github.com/jp-pelletier/Aframe-Rounded-Box-Component/blob/master/cover/repository-open-graph-template.jpg"></a>
+<a href="https://jp-pelletier.github.io/roundedanglesbox/" target="_blank"><img src="https://github.com/jp-pelletier/Aframe-Rounded-Box-Component/blob/master/cover/repository-open-graph-template.jpg"></a>
 
 ## Usage
 
